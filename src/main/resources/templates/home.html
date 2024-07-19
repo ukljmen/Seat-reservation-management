@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title></title>
+    
+    
+     <style>
+        *{
+            background-color: rgb(128, 64, 0);
+            font-size: 30px;
+        }
+
+     
+    </style>
+    
+  </head>
+  
+  <body>
+    <h1>Applikacja rezerwacja miejsc</h1>
+    <img th:src="@{/images/seat.png}"/>
+    
+    <h2>kalendarium</h2>
+    <a th:href="@{/calendarAdmin}" id="calendarAdmin">_</a> </br>
+    <a th:href="@{/calendar}" id="calendar">Utwórz nową rezerwację</a>
+    
+    
+    <form method="POST" th:action="@{/logout}">
+    <input type="submit" value="Wyloguj"/>
+    </form>
+    
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>inz</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+    
+    <style>
+        *{
+            background-color: rgb(128, 64, 0);
+            font-size: 30px;
+        }
+
+     
+    </style>
+    
+    
+  </head>
+  
+  <body>
+  
+  	<p> eoo</p>
+ 
+ 	
+    <a th:href="@{/}" id="home">homilia</a>
+    
+    </br>
+    <!--  
+    <span th:text="${wydarzenia}">ee</span>
+    
+    
+    -->
+  
+    </br>
+    </br>
+     
+    <div th:each="wydarzenie : ${wydarzenia} ">
+    <span th:text="${wydarzenie.id_wyd}"/>  default</span>
+    <span th:text="${wydarzenie.nazwa}"/>  default</span>
+    <span th:text="${wydarzenie.data_wyd}"/>  default</span>
+    </div>
+    
+    </br>
+    
+    <!--  
+    <tr th:each="wydarzenie : ${wydarzenia}">
+    </br>
+            <td th:text="${wydarzenie.id_wyd}">1</td>
+           
+            <td th:text="${wydarzenie.nazwa}">Text ...</td>
+            <td th:text="${wydarzenie.data_wyd}">Text ...</td> 
+        </tr>
+    
+    
+
+    
+    
+    
+  
+ 	<divth:each="eventlist ">
+ 	<span >
+ 	<span th:text="${wydarzenia.wyd_id}">eo</span><br/>
+ 	</div>
+ 	<span th:text="${wydarzenie.nazwa}">wyd</span><br/>
+<div th:each="ingredient : ${wrap}">
+        <input name="ingredients" type="checkbox" th:value="${ingredient.id}" />
+        <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+      </div>
+      
+      
+      th:value="${wydarzenie.id_wyd}" /> 
+      
+      
+  -->
+  
+  
+   
+    
+    <form method="POST" th:action="@{/calendar}" th:object="${event}">
+		<div th:each="event : ${events}">
+			<label for="event"></label>
+			<input type="radio"th:value="${event.event_id}"  th:field="*{event}"/> 
+			<span th:text="${event.name}"></span>
+			<span th:text="${event.event_date}"></span>
+		</div>
+		<button>Wybierz wydarzenie</button>
+	</form>
+ 	 
+  <!--
+		  
+		  <span th:text="${wydarzenie.nazwa}"></span> </br><span th:text="${wydarzenie.data_wyd}"></span> <br/>
+      <input type="submit" value="wybierz"/>
+      -->
+  
+  
+  </body>
+</html>

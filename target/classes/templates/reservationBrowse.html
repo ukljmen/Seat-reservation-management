@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>inz</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+    
+    <style>
+        *{
+            background-color: rgb(128, 64, 0);
+            font-size: 30px;
+        }
+
+     
+    </style>
+    
+    
+  </head>
+  
+  <body>
+  
+  		<h3>Twoje rezerwacje<h3>
+   		<div th:each="reservation : ${reservations}">
+			<span th:text="${reservation.event.name}"></span><br>
+			<span th:text="${reservation.event.event_date}"></span><br>
+			<span> rząd: </span>
+			<span th:text="${reservation.seat.seat_row}"></span><br>
+			<span> miejsce: </span>
+			<span th:text="${reservation.seat.seat_row}"></span><br><br>
+		</div>
+  
+  
+  
+  </body>
+</html>

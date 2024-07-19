@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title></title>
+    
+    
+     <style>
+        *{
+            background-color: rgb(128, 64, 0);
+            font-size: 30px;
+        }
+
+     
+    </style>
+    
+  </head>
+  
+  <body>
+    <h1>Applikacja rezerwacja miejsc</h1>
+    
+    
+    <div th:if="${error}">
+    Logowanie nieudane. Sprawdz poprawność danych logowania.
+    </div>
+    
+    <p> <a th:href="@{/register}"> Zarejestruj się </a> </p>
+    
+    <form method = "POST" th:action="@/login}" id ="loginForm">
+    
+    	<label for="username">Nazwa użytkownika: </label>
+   		<input type="text" name="username" id="username" /><br/>
+    	<label for="password">Hasło: </label>
+    	<input type="password" name="password" id="password" /><br/>
+     
+    	<input type="submit" value="Zaloguj się" />
+    </form>
+    
+    
+  </body>
+  
+</html>

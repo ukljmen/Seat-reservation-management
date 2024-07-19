@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>inz</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+    
+    <style>
+        *{
+            background-color: rgb(128, 64, 0);
+            font-size: 30px;
+        }
+
+     
+    </style>
+    
+    
+  </head>
+  
+  <body>
+  
+  	<p> eoo</p>
+ 
+ 	
+    <a th:href="@{/}" id="home">homilia</a>
+    
+    </br>
+   
+    <span th:text="${seatsSeats}">ee</span>
+    
+     <!--  
+   
+  
+    </br>
+    </br>
+     
+    <div th:each="seat : ${seatsSeats} ">
+    <span th:text="${wydarzenie.id_wyd}"/>  default</span>
+    <span th:text="${wydarzenie.nazwa}"/>  default</span>
+    <span th:text="${wydarzenie.data_wyd}"/>  default</span>
+    </div>
+    
+    </br>
+     -->
+  
+  	 
+     <!-- 
+    <p> miejsce rzond</p>
+      <div th:each="seat : ${seatsSeats}">
+      
+      
+      <label for="seat"></label>
+        <input type="radio"th:value="${seat.ID_seat}"  th:field="*{seat}"/> 
+     
+        <span th:text="${seat.seat_number}"></span>   
+        <span th:text="${seat.seat_row}"></span> <br/>
+        
+         -->
+        
+        
+        
+	<form method="POST" th:object="${seatchosen}">
+        
+        <h2>rząd:</h2>
+        <select th:field="*{seat_row}">
+        	<option th:each="row_i : ${seat_row}" th:value="${row_i}" th:text="${row_i}">
+        </select>
+        	
+        <h2>miejsce:</h2>
+        <select th:field="*{seat_number}">
+        	<option th:each="number_i : ${seat_number}" th:value="${number_i}" th:text="${number_i}">
+        </select>
+        
+		<button>wybierz miejsce</button>
+	</form>    
+      <!--
+		  
+		  <span th:text="${wydarzenie.nazwa}"></span> </br><span th:text="${wydarzenie.data_wyd}"></span> <br/>
+      <input type="submit" value="wybierz"/>
+      -->
+ 
+  
+  
+  
+  
+  
+  </body>
+</html>

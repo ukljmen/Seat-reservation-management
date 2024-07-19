@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title></title>
+    
+    
+     <style>
+        *{
+            background-color: rgb(128, 64, 0);
+            font-size: 30px;
+        }
+
+     
+    </style>
+    
+  </head>
+  
+  <body>
+    <h1>Applikacja rezerwacja miejsc</h1>
+    
+    
+   
+    
+    
+    
+    <form method = "POST" th:action="@/register}" id ="registerForm">
+    
+		<label for="username">Nazwa użytkownika: </label>
+		<input type="text" name="username" id="username" />
+		<span class="validationError"
+            th:if="${#fields.hasErrors('username')}" 
+            th:errors="*{username}"></span><br/>
+		
+		
+		<label for="password">Hasło: </label>
+		<input type="password" name="password" id="password" />
+      	<span class="validationError"
+            th:if="${#fields.hasErrors('password')}" 
+            th:errors="*{password}"></span><br/>
+     
+		<input type="submit" value="Zarejestruj" />
+    </form>
+    
+    
+  </body>
+  
+</html>

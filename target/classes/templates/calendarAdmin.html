@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>inz</title>
+    <link rel="stylesheet" th:href="@{/styles.css}" />
+    
+    <style>
+        *{
+            background-color: rgb(128, 64, 0);
+            font-size: 30px;
+        }
+
+     
+    </style>
+    
+    
+  </head>
+  
+  <body>
+  
+  	<p> eoo</p>
+ 
+ 	
+    <a th:href="@{/}" id="home">homilia</a>
+    
+    </br>
+    
+    <span th:text="${wydarzenia}">ee</span>
+    
+    </br>
+    </br>
+     
+    <div th:each="wydarzenie : ${wydarzenia} ">
+    <span th:text="${wydarzenie.id_wyd}"/>  default</span>
+    <span th:text="${wydarzenie.nazwa}"/>  default</span>
+    <span th:text="${wydarzenie.data_wyd}"/>  default</span>
+    </div>
+    
+    </br>
+    <tr th:each="wydarzenie : ${wydarzenia}">
+    </br>
+            <td th:text="${wydarzenie.id_wyd}">1</td>
+           
+            <td th:text="${wydarzenie.nazwa}">Text ...</td>
+            <td th:text="${wydarzenie.data_wyd}">Text ...</td> 
+        </tr>
+    
+    
+
+    
+    
+    <!--  
+  
+ 	<divth:each="eventlist ">
+ 	<span >
+ 	<span th:text="${wydarzenia.wyd_id}">eo</span><br/>
+ 	</div>
+ 	
+<div th:each="ingredient : ${wrap}">
+        <input name="ingredients" type="checkbox" th:value="${ingredient.id}" />
+        <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+      </div>
+  -->
+  
+  
+ 		 <div th:each="event : ${events}">
+			<label for="event"></label>
+			<input type="radio"th:value="${event.event_id}"  th:field="*{event}"/> 
+			<span th:text="${event.name}"></span>
+			<span th:text="${event.event_date}"></span>
+		</div>
+  
+  
+  
+    <form  method="post" th:action="@{/calendarAdmin}" th:object="${event}" >
+      <h1>dodaj wydarzenie</h1>
+      
+      <label for="nazwa" >nazwa: </label>
+      <input type="text" th:field="*{name}"/>
+   
+      <label for="event_">data: </label>
+      <input type="text" th:field="*{event_date}"/> <br/>
+      
+      <input type="submit" value="Dodaj wyarzenie"//>
+    </form>
+    
+       <!--     
+ th:object="${event}" 
+    th:action="dodajWyd"
+    th:action="@{/dodajWyd}"
+      <label for="typ">typ: </label>
+      <input type="text" th:field="*{type}"/>
+  -->
+  </body>
+</html>
